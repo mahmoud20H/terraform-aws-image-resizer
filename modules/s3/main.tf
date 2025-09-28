@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "original_images_bucket" {
   bucket = var.original_bucket_name
+  force_destroy = true  #to allow deletion of non-empty buckets
 
   tags = {
     Name        = "${var.project_name}-original-images-${var.environment}"
@@ -36,6 +37,7 @@ resource "aws_s3_bucket_public_access_block" "original_images_bucket_pab" {
 
 resource "aws_s3_bucket" "processed_images_bucket" {
   bucket = var.processed_bucket_name
+  force_destroy = true  # to allow deletion of non-empty buckets
 
   tags = {
     Name        = "${var.project_name}-processed-images-${var.environment}"
