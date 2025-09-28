@@ -6,8 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  vultara-artifacts:
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+      contents: read
+      statuses: write
+      id-token: write  # Required for OIDC authentication
     
     steps:
     - name: Checkout code
@@ -16,7 +21,8 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: GitHubActions-for-repos
+        role-to-assume: arn:aws:iam::356630932809:role/GitHubActions-for-repos
+        role-session-name: GitHubActions-for-repos
         aws-region: us-east-1
         
     - name: Setup Terraform
