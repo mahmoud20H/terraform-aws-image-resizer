@@ -16,7 +16,17 @@ jobs:
       with:
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
         aws-region: ${{ secrets.AWS_REGION }}
+            
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
         
+    - name: Install Lambda dependencies
+      run: |
+        cd modules/lambda/lambda_function
+        npm install
+            
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:

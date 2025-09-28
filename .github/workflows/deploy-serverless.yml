@@ -24,7 +24,18 @@ jobs:
         role-to-assume: arn:aws:iam::356630932809:role/GitHubActions-for-repos
         role-session-name: GitHubActions-for-repos
         aws-region: us-east-1
+
+           
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
         
+    - name: Install Lambda dependencies
+      run: |
+        cd modules/lambda/lambda_function
+        npm install
+             
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
