@@ -1,4 +1,4 @@
-🖼️ Serverless Image Processing Application
+🖼️ Serverless Image Processing Application 
 
 A complete DevOps project that implements a serverless image processing application using AWS services, Terraform for IaC, and GitHub Actions for CI/CD.
 The application automatically processes uploaded images by resizing them and adding watermarks.
