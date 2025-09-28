@@ -1,0 +1,6 @@
+aws_region            = "us-east-1"
+project_name          = "serverless-image-processing"
+environment           = "dev"
+original_bucket_name  = "my-original-images-mahmoudh20"
+processed_bucket_name = "my-processed-images-mahmoudh20"
+lambda_function_name  = "image-processing-lambda"
