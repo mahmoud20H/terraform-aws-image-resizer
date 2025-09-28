@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  vultara-artifacts:
+  deploy-serverless:
     runs-on: ubuntu-latest
+    environment: AWS_ROLE_TO_ASSUME
     permissions:
       deployments: write
       contents: read
@@ -21,9 +22,8 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::356630932809:role/GitHubActions-for-repos
-        role-session-name: GitHubActions-for-repos
-        aws-region: us-east-1
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }} 
+        aws-region: ${{ secrets.AWS_REGION }}    
 
            
     - name: Setup Node.js
@@ -35,7 +35,7 @@ jobs:
       run: |
         cd modules/lambda/lambda_function
         npm install
-             
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
