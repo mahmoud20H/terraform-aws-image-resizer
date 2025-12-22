@@ -1,39 +1,17 @@
-🖼️ Serverless Image Processing Application 
-
+**🖼️ Serverless Image Processing Application 
+**
 A complete DevOps project that implements a serverless image processing application using AWS services, Terraform for IaC, and GitHub Actions for CI/CD.
 The application automatically processes uploaded images by resizing them and adding watermarks.
 
-🏗️ Terraform Architecture Overview
+**🏗️ AWS Architecture Overview
+**
+![AWS Serverless Image Processing Architecture](AWS-Arch.png)
 
-<span style="color:orange; font-weight:bold;">Project Structure:</span>
-serverless-image-processing/
-├── main.tf                 # Main configuration file
-├── variables.tf            # Input variables
-├── outputs.tf              # Output values
-├── terraform.tfvars        # Variable values
-├── backend.tf              # Backend configuration for state storage
-├── modules/                # Reusable modules
-│   ├── s3/                 # S3 buckets configuration
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── lambda/             # Lambda function configuration
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   ├── outputs.tf
-│   │   └── lambda_function/
-│   │       ├── index.js    # Lambda function code
-│   │       └── package.json
-│   └── iam/                # IAM roles and policies
-│       ├── main.tf
-│       ├── variables.tf
-│       └── outputs.tf
-└── .github/workflows/      # GitHub Actions workflows
-    ├── deploy.yml          # Deployment workflow
-    └── destroy.yml         # Destroy workflow
+This diagram shows the serverless image processing workflow using
+Amazon S3, AWS Lambda, IAM, and CloudWatch.
 
-☁️ AWS Services Used
-
+**☁️ AWS Services Used
+**
 🪣 Amazon S3
 <span style="color:green;">✔ Stores original and processed images</span>
 <span style="color:green;">✔ Triggers Lambda functions on upload</span>
@@ -52,8 +30,8 @@ serverless-image-processing/
 <span style="color:orange;">✔ Logs Lambda executions</span>
 <span style="color:orange;">✔ Provides monitoring & debugging</span>
 
-⚙️ GitHub Actions Workflows
-🚀 Deploy Workflow
+**⚙️ GitHub Actions Workflows
+**🚀 Deploy Workflow
 
 Trigger: Manual dispatch
 
@@ -61,16 +39,16 @@ Purpose: Deploy or update infrastructure
 
 Steps: Checkout → AWS credentials → Node.js setup → Install Lambda deps → Terraform init → Plan → Apply
 
-💥 Destroy Workflow
-
+**💥 Destroy Workflow
+**
 Trigger: Manual dispatch
 
 Purpose: Remove all deployed resources
 
 Steps: Checkout → AWS credentials → Node.js setup → Terraform init → Destroy
 
-🔑 Prerequisites
-
+**🔑 Prerequisites
+**
 AWS account with required permissions
 
 Terraform installed locally
@@ -115,8 +93,8 @@ Update image_sizes in terraform.tfvars
 
 Change watermark_text for custom watermark
 
-🛠️ Troubleshooting
-
+**🛠️ Troubleshooting
+**
 Lambda Function Not Triggered
 ✅ Ensure upload goes to uploads/ folder
 ✅ Verify S3 event notifications
