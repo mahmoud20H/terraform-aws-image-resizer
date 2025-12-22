@@ -30,6 +30,7 @@ Amazon S3, AWS Lambda, IAM, and CloudWatch.
 <span style="color:orange;">✔ Logs Lambda executions</span>
 <span style="color:orange;">✔ Provides monitoring & debugging</span>
 
+---------------------------------------------------------------------------------------------------------------------
 **⚙️ GitHub Actions Workflows
 **🚀 Deploy Workflow
 
@@ -47,6 +48,7 @@ Purpose: Remove all deployed resources
 
 Steps: Checkout → AWS credentials → Node.js setup → Terraform init → Destroy
 
+---------------------------------------------------------------------------------------------------------------------
 **🔑 Prerequisites
 **
 AWS account with required permissions
@@ -93,6 +95,7 @@ Update image_sizes in terraform.tfvars
 
 Change watermark_text for custom watermark
 
+---------------------------------------------------------------------------------------------------------------------
 **🛠️ Troubleshooting
 **
 Lambda Function Not Triggered
