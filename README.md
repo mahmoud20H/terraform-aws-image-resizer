@@ -6,7 +6,7 @@ The application automatically processes uploaded images by resizing them and add
 
 ## Architecture Diagram
 
-![AWS Serverless Image Processing Architecture](AWS%20Arch.png)
+![AWS Serverless Image Processing Architecture](AWS-Arch.png)
 
 This diagram shows the serverless image processing workflow using
 Amazon S3, AWS Lambda, IAM, and CloudWatch.
