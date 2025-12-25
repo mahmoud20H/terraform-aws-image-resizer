@@ -4,8 +4,9 @@ A complete DevOps project that implements a serverless image processing applicat
 The application automatically processes uploaded images by resizing them and adding watermarks.
 
 
-🏗️ AWS Architecture Overview
-![AWS Serverless Image Processing Architecture](AWS-Arch.png)
+## Architecture Diagram
+
+![AWS Serverless Image Processing Architecture](AWS%20Arch.png)
 
 This diagram shows the serverless image processing workflow using
 Amazon S3, AWS Lambda, IAM, and CloudWatch.
